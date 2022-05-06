@@ -12,22 +12,14 @@ func main() {
 }
 
 func JosephusPermutation(items []interface{}, k int) []interface{} {
-    clone := make([]interface{}, 0)
-    clone = append(clone, items...)
     res := make([]interface{}, 0)
     last := 0
-    for len(clone) > 0 {
-        index := (last - 1 + k) % len(clone)
-        res = append(res, clone[index])
-        clone = RemoveIndex(clone, index)
+    for len(items) > 0 {
+        index := (last - 1 + k) % len(items)
+        res = append(res, items[index])
+        items = append(items[:index], items[index+1:]...)
         last = index
     }
 
     return res
-}
-
-func RemoveIndex(s []interface{}, index int) []interface{} {
-    ret := make([]interface{}, 0)
-    ret = append(ret, s[:index]...)
-    return append(ret, s[index+1:]...)
 }
