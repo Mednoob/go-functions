@@ -18,7 +18,7 @@ func RGBToHex(r, g, b float64) string {
 
 func Hex(num float64) string {
     first := math.Max(num, 0)
-    first = math.Min(num/16, 15.9375)
+    first = math.Min(first/16, 15.9375)
     second := math.Mod(first, 1) * 16
 
     return strings.ToUpper(strconv.FormatInt(int64(math.Floor(first)), 16) + strconv.FormatInt(int64(second), 16))
