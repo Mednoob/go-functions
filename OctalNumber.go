@@ -15,11 +15,7 @@ func OctalNumber(num int) float64 {
     var octal float64
     str := strconv.Itoa(num)
     for i, v := range str {
-        conv, er := strconv.Atoi(string(v))
-        if er != nil {
-            fmt.Println("Error occured while converting ASCII to Int")
-            return 0
-        }
+        conv, _ := strconv.Atoi(string(v))
         octal += float64(conv) * math.Pow(8, float64(len(str)-1-i))
     }
 
