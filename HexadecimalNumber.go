@@ -7,8 +7,8 @@ import (
 
 func main() {
     num := HexadecimalNumber("fa0")
-    fmt.Println(num)
-    fmt.Println(num == 0xfa0)
+    fmt.Println(num) // Should print '4000'
+    fmt.Println(num == 0xfa0) // Should print 'true'
 }
 
 func HexadecimalNumber(str string) int {
